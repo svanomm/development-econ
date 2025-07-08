@@ -89,4 +89,19 @@ Below are scatterplots of my HDI proxies against log of GDP PPP for my sample of
  As discussed above, my HDI measures have higher correlation with Log GDP than with GDP. However, both correlations are relatively weak, at around 13\% for GDP and 30\% for Log GDP. There are many reasons why we could expect these results. There should be a positive correlation because, generally speaking, countries with higher GDP have more government resources to invest in health and education, improving the HDI. However, the correlations are relatively weak because GDP does not control for population, so high population countries like China have higher GDP than Australia (for example), though Australia is richer on a per-capita basis. Additionally, GDP does not consider the distribution of wealth, so countries with very high wealth inequality could have a high GDP but still have a large portion of its population in poverty.
 
 Going into this analysis, one criticism I expected of the HDI was that it does not account for gender inequality. I expected that calculating the HDI for females only would widen the distribution of HDI scores (with Low-HDI countries having more gender inequality than high-HDI ones). However, my correlation results show that the female HDI proxies are almost identical to the original HDI proxies, indicating that any differences in gender inequality are already baked into the HDI metrics. It is also very likely that my choice of variables do not represent the full extent of gender inequality in a country, but I wanted to keep my variables in line with the HDI components.
+
+It is easy to argue that the UN should include additional metrics in the HDI to more realistically account for measures of poverty in the modern age. For example, we could account for access to running water, electricity or internet. We could control for air quality, pollution levels, and public health infrastructure. We could also include measures of leisure such as access to public parks and time spent watching TV or online. Unfortunately, the main issue is data availability; collecting these metrics is expensive for developing countries, and so the HDI is meant to include only the bare necessities for measuring development. As an additional sensitivity, I averaged the indexes of the following variables as an additional component to the HDI:
+\begin{itemize}
+    \singlespace
+    \item Access to electricity (\% of population),
+    \item Physicians (per 1,000 people),
+    \item Individuals using the Internet (\% of population),
+    \item People with basic handwashing facilities including soap and water (\% of population),
+    \item Suicide mortality rate (per 100,000 population).
+\end{itemize}
+Some of these metrics are missing for certain countries, so I replaced missing values with the mean of the available data for each country. After calculating the correlation of this new metric with my other HDI measures, I found that it continues to have a very high correlation of 97\% or higher, even with the original UN HDI. This shows that these additional fields are largely captured by the existing HDI components.
+
+\section{Conclusion}
+I used data from the World Bank to create proxies of HDI for a sample of 100 countries. I found that even with some substitutions of variables, my proxy measures are highly correlated with the original HDI. I also found that limiting the HDI to females results in a substantially similar measure. My results highlight the robustness of the HDI to additional metrics, showing that the three basic components of health, education, and income coincide with a wide variety of other poverty factors.
+
 \end{document}
