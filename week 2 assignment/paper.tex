@@ -104,8 +104,7 @@ Before answering the questions, please note my data preparation steps. I use 201
     \footnotesize
     \input{output/reg_income_poverty_group.tex}
     \normalsize
-    In this regression, I have omitted the category of middle-income countries to avoid collinearity. This means that the coefficients on the high and low categories are interpreted relative to middle-income countries. The coefficients indicate that rich countries have a 2.8 percentage point lower poverty headcount \% than middle-income countries, while poor countries have a 21.6 percentage point higher poverty headcount \% than middle-income countries. The constant indicates that the average poverty headcount \% in middle-income countries is 3.4\%. This regression demonstrates diminishing marginal returns to poverty rate as income increases, since high-income countries are not very different from middle-income countries, but poor countries are very different from middle-income countries in terms of poverty \%.
-
+    In this regression, I have omitted the category of middle-income countries to avoid collinearity. This means that the coefficients on the high and low categories are interpreted relative to middle-income countries. The coefficients indicate that rich countries have a 2.8 percentage point lower poverty headcount \% than middle-income countries, while poor countries have a 21.6 percentage point higher poverty headcount \% than middle-income countries. The constant indicates that the average poverty headcount \% in middle-income countries is 3.4\%. This regression demonstrates diminishing marginal returns to poverty rate as income increases, since high-income countries are not very different from middle-income countries, but poor countries are very different from middle-income countries in terms of poverty \%. Also, the coefficient on the high-income dummy variable is not statistically significant, suggesting that there may be no difference in poverty headcount \% between high- and middle-income countries.
 
     \item \textbf{Do you expect any non-linearity in your regression, in which variable? Why? Test your hypothesis.}
     \\\\
@@ -115,7 +114,7 @@ Before answering the questions, please note my data preparation steps. I use 201
     \footnotesize
     \input{output/reg_kuznets.tex}
     \normalsize
-    As we saw in the scatter plot of inequality vs poverty above, poverty is generally bunched around zero, and the line of fit is clearly not linear. One way to test for non-linearity is by plotting Gini Index against log of poverty. It is clear from this scatter plot that the relationship is non-linear because the line of fit with log-poverty is much better. This relationship exhibits diminishing returns to inequality as poverty headcount ratio increases.
+    As we saw in the scatter plot of inequality vs poverty above, poverty is generally bunched around zero, and the line of fit is clearly not linear. One way to test for non-linearity is by plotting Gini index against log of poverty.\footnote{I add 1 to the poverty values to ensure that taking the log does not drop the data from the regression.} It is clear from this scatter plot that the relationship is non-linear because the line of fit with log-poverty is much better. This relationship exhibits diminishing returns to inequality as poverty headcount ratio increases.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{./output/Scatterplot Inequality vs Log-Poverty.png}
