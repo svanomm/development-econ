@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsfonts,bbm,bm,dcolumn,booktabs,eurosym,geometry,ulem,graphicx,color,xcolor,setspace,sectsty,comment,float,caption,subfigure,array,hyperref}
+\usepackage{xurl}
+\usepackage[font=bf]{caption}
+\usepackage[bottom]{footmisc}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue!35!black},
+    urlcolor={blue!35!black}
+}
+
+\geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+
+\begin{document}
+\title{Development Economics Problem Set 3}
+\author{Steven VanOmmeren\thanks{A complete replication package of this project is available at \url{https://github.com/svanomm/development-econ/}.}}
+\date{\today}
+\maketitle
+
+\doublespacing
+\noindent
+
+\begin{enumerate}
+    \item \textbf{Show a scatter plot between output per worker and capital per worker. Instead of using the dots try to use the country codes in your chart similar to Figure 1 and Figure 2 in the paper.}
+    \begin{figure}[H]
+        \centering
+        \caption{Scatter plot of output per worker vs. capital per worker}
+        \includegraphics[width=0.8\textwidth]{output_vs_capital_scatter.png}
+        \label{fig:scatter_output_capital}
+    \end{figure}
+
+    \item \textbf{Regress log output per worker on log capital per worker. Interpret your coefficients.}
+    
+    \input{reg_output_capital0.tex}
+    \input{reg_output_capital1.tex}
+
+    The constant coefficient of 2.7048 means that if the log-capital per worker was equal to 0 for a country, then output per worker would be approximately \$14.95 (since $e^{2.7048} \approx 14.95$). The coefficient of log-capital per worker is 0.6545, which implies that a 1\% increase in capital per worker is associated with a 0.65\% increase in output per worker, on average. Because this is a log-log regression, the model measures the elasticity of output per worker with respect to capital per worker.
+\\\\
+    It also worth regressing output per worker on log of \textit{human} capital per worker, rather than physical capital:
+    \input{reg_output_human_capital0.tex}
+    \input{reg_output_human_capital1.tex}
+    This regression shows that a 1\% increase in human capital per worker (e.g. additional education) is associated with a 2.97\% increase in output per worker. It also predicts that a country with no human capital (i.e. no education) would output an average of \$1,125.86 per worker ($e^{7.0263}$).
+
+    \item \textbf{Measure Total Factor Productivity for this modified equation to the best of your ability.}
+    
+    I calculated TFP by rearranging Hall-Jones equation 3 using the log-terms, since that is what the data came with:
+    \begin{align*}
+    \log(y_i) &= \log\left(\frac{K_i}{Y_i}^{\alpha/(1-\alpha)}h_iA_i\right) \\
+    &= \log\left(\frac{K_i}{Y_i}^{\alpha/(1-\alpha)}\right) + \log(h_i) + \log(A_i) \\
+    &= \frac{\alpha}{1-\alpha}\log\left(\frac{K_i}{Y_i}\right) + \log(h_i) + \log(A_i) \\
+    \log(A_i) &= \log(y_i) - \frac{\alpha}{1-\alpha}\log\left(\frac{K_i}{Y_i}\right) - \log(h_i) \\
+    A_i &= \exp(\log(y_i) - \frac{\alpha}{1-\alpha}\log\left(\frac{K_i}{Y_i}\right) - \log(h_i))
+    \end{align*}
+
+    After calculating TFP, I then recreated Hall-Jones' Table 1, which shows the TFP relative to the United States. Note that the USA's value of TFP is 6815.126, so you can recover the value of TFP for each country by multiplying its relative TFP by 6815.126.
+
+    \input{table1.tex}
+\end{enumerate}
+\end{document}
