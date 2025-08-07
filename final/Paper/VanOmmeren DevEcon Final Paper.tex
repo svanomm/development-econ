@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsmath,amsfonts,bbm,bm,dcolumn,booktabs,eurosym,geometry,ulem,graphicx,color,xcolor,setspace,sectsty,comment,float,caption,pdflscape,subfigure,array,hyperref,listings}
+\usepackage{xurl}
+\usepackage[font=bf]{caption}
+\usepackage[bottom]{footmisc}
+
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue!35!black},
+    urlcolor={blue!35!black}
+}
+\normalem
+\interfootnotelinepenalty=10000
+\setcounter{tocdepth}{2}
+
+\geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+\usepackage[style=authoryear,backend=bibtex,maxcitenames=2]{biblatex}
+\addbibresource{biblio.bib}
+
+\begin{document}
+\title{Exploring Heterogeneous Responses to Text Message Development Programs: An Application of Machine Learning to Fabregas et al. (2025)}
+\author{Steven VanOmmeren\thanks{\href{mailto:sevanommeren@gmail.com}{sevanommeren@gmail.com}. A complete replication package of this project is available at \url{https://github.com/svanomm/development-econ/}.}}
+\date{\today}
+\maketitle
+\begin{abstract}
+\noindent
+    
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+
+\doublespacing
+\section{Introduction}
+
+[[paragraph introducing development economics with policy goals of increasing profitability of farmers/workers at the micro level]]
+
+Research on low-cost behavioral interventions, including text messages and nudges, has emerged as a critical area of inquiry due to their potential to influence economic behavior and improve policy outcomes efficiently. Behavioral economics has evolved over the past two decades, integrating psychological insights to address decision-making limitations beyond traditional economic models(Balawi \& Ayoub, 2023) ("Behavioral Development Economics", 2023). Governments worldwide have increasingly adopted nudging strategies to enhance public service uptake, health behaviors, and financial decisions, demonstrating scalable impacts at relatively low costs (Benartzi et al., 2017) (DellaVigna \& Linos, 2020). For instance, large-scale randomized controlled trials (RCTs) have shown that nudges can increase enrollment in employment services and vaccination rates, highlighting their practical significance(Hopkins \& Dorion, 2024) (Patel et al., 2022). The growing interest in these interventions reflects their promise to address persistent challenges such as low program take-up and suboptimal health and financial behaviors(Wheatley, 2023) (Smith et al., 2020).
+
+Despite promising results, the effectiveness of low-cost behavioral interventions remains uneven across contexts, revealing critical knowledge gaps. While some studies report significant increases in program participation and healthy choices, others find limited or no effects, especially when scaling interventions or targeting hard-to-reach populations (Linos et al., 2020) ("Can Nudges Increase Take-Up of the EITC?...", 2022) (Page et al., 2022). Debates continue about the relative merits of nudges versus traditional incentives or regulatory approaches, with some evidence suggesting that nudges may complement but not fully replace financial incentives(Dizon \& Yu, 2021) (Benartzi et al., 2017). These mixed findings underscore the need for systematic synthesis to clarify when and how low-cost behavioral interventions effectively alter economic behavior and inform policy design(Congdon \& Wright, 2023) (Benartzi et al., 2017).
+
+In this paper, we replicate and extend the findings of Fabregas et al. (2025), who analyze six randomized controlled trials involving 128,000 farmers in Kenya and Rwanda, finding that text message-based agricultural extension programs modestly but significantly increase the adoption of lime and fertilizer. The authors are mostly concerned with average treatment effects, but our focus is on the heterogeneity of treatment effects across different farmer characteristics.
+
+The key hypothesis of this paper is that development policies based in nudge theory would benefit from tailoring the nudges to specific groups of people, rather than casting a wide net. In particular, we use the authors' survey data to model lime/fertilizer adoption as a complex, non-linear function of observed characteristics. We show that powerful machine learning models can model the probability of adoption better than the authors' traditional analysis, and then explain how such models could be used for policies going forward.
+
+This paper appears to be the first to apply machine learning techniques to model person-specific adoption of development economic nudges. All of our code used to [[]] is available free and open-source. The focus of this paper is on the problem of [[]]; we leave an assessment of [[]] to future work.
+
+The rest of this paper is as follows: the following section reviews the relevant literature on [[]]. Section \ref{section:methods} describes the data preparation and modeling techniques used in this paper. Section \ref{section:results} presents the results of our models and other analyses. Section \ref{section:discussion} discusses the implications of our findings and their relation to the existing literature. Section \ref{section:conclusion} concludes.
+
+\section{Literature Review}
+\label{section:litreview}
+
+\subsection{Behavioral Economics and Nudging}
+[[khaneman/tversky behavioral econ overview]]
+
+[[saliency and framing effects]]
+
+The concept of "nudging" represents a fundamental contribution to behavioral economics, pioneered by Richard Thaler and Cass Sunstein in their seminal work on choice architecture. A nudge is defined as any aspect of the choice architecture that alters people's behavior in a predictable way without forbidding any options or significantly changing their economic incentives (Thaler \& Sunstein, 2008). This approach recognizes that individuals often make suboptimal decisions due to cognitive biases, limited attention, and bounded rationality, departing from the traditional economic assumption of perfectly rational actors. Thaler demonstrated that small changes in how choices are presented—such as default options, framing effects, or salience—can significantly influence decision-making outcomes in domains ranging from retirement savings to health behaviors. The nudge framework has profound implications for public policy, as it suggests that policymakers can guide individuals toward better choices while preserving their freedom to choose. This theoretical foundation has established nudging as a cornerstone of behavioral public policy, offering an evidence-based alternative to traditional regulatory approaches.
+
+[[examples of different nudges in development economics]]
+
+\subsection{Text Experiments}
+One promising avenue of behavioral nudges in development economics is the use of text messages to influence behavior. Cellphone adoption has increased dramatically in the past 20 years, even in the poorest countries of sub-Saharan Africa. Text messages have very low marginal cost, making them an easy program to justify for a developing economy, and a highly scalable one. In particular, text messages remove the need for in-person visits, which require trained staff and are difficult to scale. Finally, large-scale text message campaigns can be easily randomized, allowing for experimentation and fast iterative improvements.
+
+\subsection{The Fabregas et al. (2025) Paper}
+Fabregas et al. (2025) offers an excellent example of the type of rigorous analysis that is necessary to improve the adoption of text campaigns for economic development. The authors analyze data from six large-scale experiments conducted in two African countries from 2015 to 2019, with a combined sample size of 128,000 farmers. These farmers live in areas with acidic soil that benefits from the application of lime and fertilizer. Both materials are relatively cheap, and essentially guaranteed to provide a profit to the farmer, yet they have very low adoption rates.\footnote{The authors found baseline adoption rates of between 6 and 12 percent for agricultural lime, depending on the sample.} Improving the adoption of lime and fertilizer would provide a small but significant boost to low-income farmers, helping to prop up the local economies. The authors study a relatively simple question: can text messages improve the adoption rates of lime and fertilizer?
+
+The authors conducted a comprehensive evaluation of six text message agricultural extension programs across Kenya and Rwanda, using both individual randomized controlled trials and meta-analysis methodology to assess impacts on farmer adoption of recommended practices. The study employed administrative data (input purchases through coupons and sales records) as the primary outcome measure to avoid self-reporting bias, supplemented by survey data for some programs. The research examined various program features including message content, repetition, behavioral framing, and complementary phone calls. The meta-analysis revealed a statistically significant 22\% increase in the odds of adopting recommended practices (95\% CI: 1.16-1.29), with consistent effects across different inputs and programs. However, the absolute impact was modest at only 2 percentage points, highlighting that while text-based interventions are highly cost-effective due to their low cost (estimated benefit-cost ratio of 46:1), they produce small effect sizes that require large sample sizes or meta-analysis to detect reliably.
+
+\section{Methods}
+\label{section:methods}
+
+\subsection{Data Preparation}
+
+\subsection{Modeling}
+
+\section{Results and Analysis}
+\label{section:results}
+\subsection{Summary Analysis}
+
+\subsection{Correlation Analysis}
+
+\subsection{Models}
+
+\subsection{Model Predictions}
+All results in this section use the LightGBM model with the highest $R^2$ from the table above, unless otherwise specified.
+
+
+\subsubsection{Sentiment Contribution}
+\section{Discussion}
+\label{section:discussion}
+
+\section{Conclusion}
+\label{section:conclusion}
+
+\newpage
+%\printbibliography
+\newpage
+
+\section{Appendix}
+
+\end{document}
