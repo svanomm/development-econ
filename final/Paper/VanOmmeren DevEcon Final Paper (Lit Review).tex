@@ -34,18 +34,6 @@ breaklines=true
 \newpage
 
 \doublespacing
-\section{Introduction}
-
-The chief concern of development economics is in improving the lives of poor people in the poorest countries of the world. There are many ways to develop an economy; top-down approaches focus on improving the quality of formal and informal institutions in the economy to promote efficient markets, while bottom-up approaches try to equip individuals with the skills and resources they need to improve their lives. A major advancement in the theory of economic development in the 21st century is the use of experiments to guide effective policies.\footnote{See \textcite{basu_influence_2020} for a description of the explosive growth of experiments (and in particular randomized experiments) to measure causal effects of various development policies. An earlier example is \textcite{duflo_use_2003}.} 
-
-In this paper, we study a particular type of bottom-up experiment, grounded in behavioral science, which attempts to steer poor people towards using productivity-increasing technology. Such experiments have historically involved expensive in-person training, but the widespread adoption of mobile phones allows for low-cost text message interventions to be used instead. Text experiments are now being tested in a wide range of contexts, from healthcare to finance to agriculture. We study agricultural experiments in particular, which often center around convincing farmers to adopt new practices or technologies that are expected to improve profitability.
-
-In this paper, we replicate and extend the findings of \textcite{fabregas_digital_2025}, who analyze six randomized controlled trials involving 128,000 farmers in Kenya and Rwanda, finding that text message-based agricultural extension programs modestly but significantly increase the adoption of lime and fertilizer. The authors are mostly concerned with average treatment effects, but our focus is on the heterogeneity of treatment effects across different farmer characteristics.
-
-The key hypothesis of this paper is that development policies based in behavioral science would benefit from tailoring the programs to specific groups of people, rather than a one-size-fits-all aproach. In particular, we use the authors' survey data to model lime/fertilizer adoption as a complex, non-linear function of observed characteristics. We show that powerful machine learning models can model the probability of adoption better than the authors' traditional analysis, and then explain how such models could be used for policies going forward. We envision a sophisticated national-scale text program which caters the types of messages sent to each farmer based on their individual characteristics, with the hope of identifying a text program that maximizes the probability of adopting profitable technologies.
-
-The rest of this paper is as follows: the following section reviews the relevant literature on behavioral science, the use of text messages in agricultural development, and our paper of interest. Section \ref{section:methods} describes the data preparation and modeling techniques used in this paper. Section \ref{section:results} presents the results of our models and other analyses. Section \ref{section:discussion} discusses the implications of our findings and their relation to the existing literature. Section \ref{section:conclusion} concludes.
-
 \section{Literature Review}
 \label{section:litreview}
 
@@ -86,67 +74,8 @@ While the purpose of the \textcite{fabregas_digital_2025} analysis was to determ
 
 However, there are a few weaknesses of the authors' heterogeneity analysis. First, the authors only study heterogeneous effects separately for each demographic variable; they do not attempt to interact the controls with each other. Second, the authors only tested logistic and OLS regressions. It is possible that the relationship between observed demographics and treatment effects are more complex than these basic models can capture. Based on the discussion in \textcite{aker_promise_2016}, it is surprising for \textcite{fabregas_digital_2025} to find no indication of heterogeneous effects. The purpose of our analysis to further explore the authors' data to see if heterogeneity exists in a more nuanced way than the authors investigated.
 
-\section{Methods}
-\label{section:methods}
-
-\subsection{Data Preparation}
-\textcite{fabregas_digital_2025} graciously provide a detailed Online Appendix and replication package for their results, which includes the data used in their regression analyses.\footnote{\url{https://www.openicpsr.org/openicpsr/project/186241/version/V1/view}.} We began by running all of their Stata code to build their regression datasets, as well as replicating their regression results.
-
-Additionally, we sourced supplementary data from the World Bank Group. The World Development Indicators (WDI) database provides a variety of country-level statistics by country and year.\footnote{\url{https://datacatalog.worldbank.org/search/dataset/0037712}.} We selected the following variables for our analysis:
-\begin{itemize}
-    \singlespacing
-    \item Mobile cellular subscriptions (per 100 people)
-    \item Individuals using the Internet (\% of population)
-    \item Adjusted net national income per capita (constant 2015 US\$)
-    \item Literacy rate, adult total (\% of people ages 15 and above)
-\end{itemize}
-After filtering the data to these variables, we selected the following countries: Kenya, Rwanda, Ecuador, India, and United States. This list includes the countries mentioned in the text experiments discussed above, as well as the United States as a reference country. We selected data from 2010 to 2019 to analyze trends over time; this period includes the time during which the \textcite{fabregas_digital_2025} experiments were conducted.
-
-\subsection{Modeling}
-We study the models underlying Table E2 in the \textcite{fabregas_digital_2025} Online Appendix. This table reports the results of 24 regressions: 6 logit and 6 OLS models, each of which is run on both the lime and the fertilizer recommendations. These are ``pooled'' models that combine the data from all the experiments that include the relevant controls. Because OLS is not ideal for studying binary outcomes, we only report the logit models. Each model uses the following specification:
-\begin{equation}
-    \mathbbm{1}[\text{Followed Recommendations}_i] = \alpha \cdot \text{Treated}_i + \beta X_i + \gamma \cdot (\text{Treated}_i \times X_i) + \epsilon_i,
-\end{equation}
-where Treated is an indicator for whether farmer $i$ was in the treatment group (received texts), $X$ is a demographic variable of interest, and $(\text{Treated}_i \times X_i)$ measures the interaction between the treatment and the demographic variable. $\epsilon$ is the error term. The following 6 variables are used for $X$:\footnote{To clarify, the model does not include all 6 variables simultaneously. $X$ denotes a single variable, and so 6 separate regressions are run, substituting $X$ for one of the variables discussed here.}
-\begin{itemize}
-    \singlespacing
-    \item Female
-    \item Primary: whether respondent completed primary school
-    \item Large Farm: more than 1.5 acres of land
-    \item Young: under 40 years old
-    \item Used Input: whether the respondent had previously used lime/fertilizer
-    \item Heard Input: whether the respondent had previous knowledge of lime/fertilizer or was aware of it
-\end{itemize}
-
-The authors report only the regression coefficients, the sample size, and the mean outcome for the Control group. They do not report any measures of model fit. We modify their code to report two measures of classification accuracy: the balanced accuracy statistic and the area under the receiver operating characteristic curve (AUROC). The balanced accuracy statistic is defined as the average of the true positive rate and true negative rate, and is a good measure of model fit for binary outcomes on unbalanced data. The AUROC is a measure of how well the model can distinguish between the two classes at various classification thresholds.
-
-An additional important note is that not all demographics were collected in each experiment, so the sample size differs among the models. This is likely why the authors did not try to combine demographics into a single model. Regardless, we report additional logit models that incorporate multiple demographics and their interactions to study more complex heterogeneity, although some of our models suffer from small sample sizes.
-
-Next, we implement a machine learning technique called LightGBM. LightGBM is a histogram-based gradient boosting tree model created by \textcite{ke_lightgbm_2017}, created as an extension to the popular XGBoost technique. The model works by iteratively splitting the data into ``branches'' of if-then statements that best fit the outcome variable. By repeatedly fitting new trees onto the residuals of existing trees, the model is able to learn complex relationships that can approximate any function. LightGBM is widely known as a versatile machine learning technique that works remarkably well with tabular data. An important aspect of LightGBM for our purposes is that it natively supports missing values by treating them as a distinct value in the splitting procedure. This is useful because the model can include all 128,000 observations, whereas a logit model would remove any rows of data with a missing variable.
-
-\section{Results and Analysis}
-\label{section:results}
-\subsection{Summary Analysis}
-
-\subsection{Correlation Analysis}
-
-\subsection{Models}
-
-\subsection{Model Predictions}
-All results in this section use the LightGBM model with the highest $R^2$ from the table above, unless otherwise specified.
-
-
-\subsubsection{Sentiment Contribution}
-\section{Discussion}
-\label{section:discussion}
-
-\section{Conclusion}
-\label{section:conclusion}
-
 \newpage
 \printbibliography
 \newpage
-
-\section{Appendix}
 
 \end{document}
