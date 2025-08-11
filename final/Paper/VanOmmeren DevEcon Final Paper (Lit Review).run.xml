@@ -44,11 +44,11 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>"VanOmmeren DevEcon Final Paper".aux</file>
-      <file>VanOmmeren_DevEcon_Final_Paper-blx.bib</file>
+      <file>"VanOmmeren DevEcon Final Paper (Lit Review)".aux</file>
+      <file>VanOmmeren_DevEcon_Final_Paper_(Lit_Review)-blx.bib</file>
     </provides>
     <requires type="dynamic">
-      <file>"VanOmmeren DevEcon Final Paper".bbl</file>
+      <file>"VanOmmeren DevEcon Final Paper (Lit Review)".bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -67,20 +67,20 @@
     <cmdline>
       <binary>bibtex</binary>
       <option>-min-crossrefs 2</option>
-      <infile>"VanOmmeren DevEcon Final Paper"</infile>
+      <infile>"VanOmmeren DevEcon Final Paper (Lit Review)"</infile>
     </cmdline>
     <input>
-      <file>"VanOmmeren DevEcon Final Paper".aux</file>
+      <file>"VanOmmeren DevEcon Final Paper (Lit Review)".aux</file>
     </input>
     <output>
-      <file>"VanOmmeren DevEcon Final Paper".bbl</file>
+      <file>"VanOmmeren DevEcon Final Paper (Lit Review)".bbl</file>
     </output>
     <provides type="dynamic">
-      <file>"VanOmmeren DevEcon Final Paper".bbl</file>
+      <file>"VanOmmeren DevEcon Final Paper (Lit Review)".bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>"VanOmmeren DevEcon Final Paper".aux</file>
-      <file>VanOmmeren_DevEcon_Final_Paper-blx.bib</file>
+      <file>"VanOmmeren DevEcon Final Paper (Lit Review)".aux</file>
+      <file>VanOmmeren_DevEcon_Final_Paper_(Lit_Review)-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>biblio.bib</file>
