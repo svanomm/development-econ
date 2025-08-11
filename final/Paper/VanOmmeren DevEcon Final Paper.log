@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.3)  11 AUG 2025 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.3)  11 AUG 2025 16:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -875,19 +875,14 @@ L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `"VanOmmeren DevEcon Final Paper".out' has not changed.
 (rerunfilecheck)             Checksum: 7EC055B8CB72EB8521F8C18F6FB28261;1860.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to '"VanOmmeren DevEcon Final Paper".run.xml'.
 \openout1 = `"VanOmmeren DevEcon Final Paper.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
  22150 strings out of 467887
- 381159 string characters out of 5438214
- 1020057 words of memory out of 5000000
+ 381160 string characters out of 5438214
+ 1020079 words of memory out of 5000000
  50317 multiletter control sequences out of 15000+600000
  644957 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
