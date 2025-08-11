@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{amssymb,amsmath,amsfonts,bbm,bm,dcolumn,booktabs,eurosym,geometry,ulem,graphicx,color,xcolor,setspace,sectsty,comment,float,caption,pdflscape,subfigure,array,hyperref,listings}
+\usepackage{amssymb,amsmath,amsfonts,bbm,bm,dcolumn,booktabs,eurosym,geometry,ulem,graphicx,color,xcolor,setspace,sectsty,comment,float,caption,pdflscape,subfigure,array,hyperref,listings,tabularx}
 \usepackage{xurl}
 \usepackage[font=bf]{caption}
 \usepackage[bottom]{footmisc}
@@ -34,6 +34,7 @@ breaklines=true
 \newpage
 
 \doublespacing
+
 \section{Introduction}
 
 The chief concern of development economics is in improving the lives of poor people in the poorest countries of the world. There are many ways to develop an economy; top-down approaches focus on improving the quality of formal and informal institutions in the economy to promote efficient markets, while bottom-up approaches try to equip individuals with the skills and resources they need to improve their lives. A major advancement in the theory of economic development in the 21st century is the use of experiments to guide effective policies.\footnote{See \textcite{basu_influence_2020} for a description of the explosive growth of experiments (and in particular randomized experiments) to measure causal effects of various development policies.} 
@@ -97,10 +98,10 @@ Additionally, we sourced supplementary data from the World Bank Group. The World
     \singlespacing
     \item Mobile cellular subscriptions (per 100 people)
     \item Individuals using the Internet (\% of population)
-    \item Adjusted net national income per capita (constant 2015 US\$)
+    \item GNI per capita, PPP (constant 2021 international \$)
     \item Literacy rate, adult total (\% of people ages 15 and above)
 \end{itemize}
-After filtering the data to these variables, we selected the following countries: Kenya, Rwanda, Ecuador, India, and United States. This list includes the countries mentioned in the text experiments discussed above, as well as the United States as a reference developed country. We selected data from 2010 to 2019 to analyze trends over time; this period includes the time during which the \textcite{fabregas_digital_2025} experiments were conducted.
+After filtering the data to these variables, we selected the following countries: Kenya, Rwanda, Ecuador, India, and United States. This list includes the countries mentioned in the text experiments discussed above, as well as the United States as a reference developed country. We selected data from 2010 to 2023 to analyze trends over time; this period includes the time during which the \textcite{fabregas_digital_2025} experiments were conducted.
 
 \subsection{Modeling}
 We specifically study the models underlying Table E2 in the \textcite{fabregas_digital_2025} Online Appendix. This table reports the results of 24 regressions: 6 logit and 6 OLS models, each of which is run on both the lime and the fertilizer recommendations. These are ``pooled'' models that combine the data from all the experiments that include the relevant controls. Because OLS is not ideal for studying binary outcomes, we only report the logit models. Each model uses the following specification:
@@ -127,10 +128,59 @@ Next, we implement a machine learning technique called LightGBM. LightGBM is a h
 \section{Results and Analysis}
 \label{section:results}
 \subsection{Summary Analysis}
+Below, we plot the national average of Mobile cellular subscriptions per 100 people using the World Bank Group data. Figure \ref{fig:mobile_subscriptions} shows that the average number of mobile subscriptions has increased dramatically in Kenya and Rwanda since 2010, while the United States has remained relatively constant. According to the data, Ecuador saw a decrease in mobile subscriptions from 2014 to 2015, with a slow recovery since then. India's increase in subscriptions has been relatively slow, on par with the United States. 
 
-\subsection{Correlation Analysis}
+While in 2010, Rwanda had fewer than 40 subscriptions per 100 people (less than half of the United States), it had about 75 subscriptions per 100 people by 2019 (the last year of experiment data in \textcite{fabregas_digital_2025}). Rwanda saw relatively little growth during the 2015 to 2019 period.
+
+Kenya had about 60 subscriptions per 100 people in 2010, nearly twice as many as in Rwanda. By 2015, the country had 80 subscriptions and, unlike Rwanda, saw a striking amount of growth in mobile subscriptions from 2015 to 2019, with the country reportedly surpassing the United States by 2019. As of 2023, the country reportedly had 120 subscriptions per 100 people, compared to about 110 in the United States. Overall, Figure \ref{fig:mobile_subscriptions} shows that mobile phone ownership has considerably increased in the developing countries involved in our studies.\footnote{Note that this chart does not show what percent of the population owns a mobile phone. People can have multiple subscriptions, and this chart does not explain the distribution of phone ownership in the population.}
+\begin{figure}[H]
+    \centering
+    \caption{National Average of Mobile Cellular Subscriptions per 100 People}
+    \includegraphics[width=\textwidth]{../output/mobile_subscriptions.pdf}
+    \begin{minipage}{0.9\textwidth}
+    \footnotesize
+    Source: World Bank Group, World Development Indicators (WDI) database. 
+    \end{minipage}
+    \label{fig:mobile_subscriptions}
+\end{figure}
+
+Next, we report the percent of individuals using the Internet by country and year. Figure \ref{fig:internet_use} shows that while Internet usage has substantially increased in all countries, it is still relatively low in Kenya and Rwanda. As of 2023, both countries were at around 35\% of the population, as opposed to over 70\% in Ecuador and over 90\% in the United States.\footnote{Internet usage for India was not available in 2023 in our dataset.} During the 2015-2019 period of the \textcite{fabregas_digital_2025} studies, fewer than 1 in 5 people used the Internet in Kenya and Rwanda.
+
+Comparing Figure \ref{fig:internet_use} with Figure \ref{fig:mobile_subscriptions} shows that text message-based experiments are a better policy to pursue compared to social media-based interventions for Kenya and Rwanda (given their relatively low Internet usage). But for other countries like Ecuador, Internet use is high enough that social media could be a viable tool for nudge experiments.
+
+\begin{figure}[H]
+    \centering
+    \caption{Percent of Individuals using the Internet}
+    \includegraphics[width=\textwidth]{../output/individuals_using_internet.pdf}
+    \begin{minipage}{0.9\textwidth}
+    \footnotesize
+    Source: World Bank Group, World Development Indicators (WDI) database. 
+    \end{minipage}
+    \label{fig:internet_use}
+\end{figure}
+
+Finally, we report the national literacy rates for each country. Unfortunately, literacy data was missing for several years in our database for the given countries. Regardless, connecting the available data points shows that literacy rates have slowly increased over time for each country. In 2010, Rwanda had a literacy rate of about 66\%, which increased to 79\% by 2022. Ecuador has the highest literacy rate in this chart, increasing from 92\% to 94\% from 2010 to 2022.\footnote{United States literacy rate was not available in this data. Using a comparable definition of basic literacy (as opposed to more advanced reading/writing ability), the U.S. would likely have a literacy rate of approximately 100\%. \url{https://worldpopulationreview.com/country-rankings/literacy-rate-by-country}.}
+
+\begin{figure}[H]
+    \centering
+    \caption{National Adult Literacy Rates}
+    \includegraphics[width=\textwidth]{../output/literacy_rate.pdf}
+    \begin{minipage}{0.9\textwidth}
+    \footnotesize
+    Source: World Bank Group, World Development Indicators (WDI) database. 
+    \end{minipage}
+    \label{fig:literacy_rate}
+\end{figure}
 
 \subsection{Models}
+Below, we report our replication of the heterogeneity regressions from \textcite{fabregas_digital_2025}, where we have added model fit statistics for each model.
+
+\input{../output/replicated_lime.tex}
+\input{../output/replicated_fert.tex}
+
+Viewing the replicated results from \textcite{fabregas_digital_2025}, we find that the AUROC, best threshold, and balanced accuracy vary substantially between models. For predicting lime, the model that includes all observations (Large Farm) has an AUROC of 0.79 and balanced accuracy of 0.76.\footnote{This model fit is due almost entirely to the program fixed effects. Removing the treatment variable, control, and interaction terms yields an AUROC of 0.78, which is only slightly worse.} The other controls are missing for some observations, and for the lime prediction this results in worse AUROC. But this does not hold for fertilizer, where the model with the most number of observations (Large Farm and Used Input) have AUROCs that are worse than a model with less than a quarter of the observations (Primary).
+
+One takeaway from the replicated results is that model performance seems to be incomparable when the observation count is different. The value of Mean Control (i.e. adoption rates for the control group) is so different across models that it complicates direct comparisons.
 
 \subsection{Model Predictions}
 All results in this section use the LightGBM model with the highest $R^2$ from the table above, unless otherwise specified.

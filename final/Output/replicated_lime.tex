@@ -1,0 +1,29 @@
+\begin{table}[H] \centering
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\caption{Replicated Heterogeneity Logit Models: Lime}
+\resizebox{0.8\columnwidth}{!}{
+\begin{tabularx}{\linewidth}{@{}lCCCCCC@{}}
+
+\toprule
+{Variable}&{Female}&{Primary}&{Large Farm}&{Young}&{Used Input}&{Heard Input} \tabularnewline
+\midrule \addlinespace[\belowrulesep]
+Treated&1.183$^{***}$&1.115&1.146$^{***}$&1.101$^{***}$&1.162$^{***}$&1.078 \tabularnewline
+&(0.054)&(0.113)&(0.032)&(0.034)&(0.042)&(0.073) \tabularnewline
+$[X]$&0.729&1.979$^{**}$&1.204&1.066&0.520&0.715 \tabularnewline
+&(0.173)&(0.542)&(0.342)&(0.257)&(0.291)&(0.204) \tabularnewline
+$[X]$ *Treated&0.938&1.055&0.994&1.055&1.020&1.245$^{*}$ \tabularnewline
+&(0.048)&(0.132)&(0.042)&(0.047)&(0.101)&(0.145) \tabularnewline
+\midrule Program FE&Yes&Yes&Yes&Yes&Yes&Yes \tabularnewline
+Mean Control&0.29&0.23&0.13&0.31&0.06&0.25 \tabularnewline
+AUROC&0.59&0.60&0.79&0.56&0.72&0.58 \tabularnewline
+Best Threshold&0.31&0.25&0.14&0.33&0.06&0.28 \tabularnewline
+Balanced Accuracy&0.57&0.58&0.76&0.55&0.71&0.56 \tabularnewline
+Observations&44,969&9,711&128,889&40,164&91,433&8,560 \tabularnewline
+\bottomrule \addlinespace[\belowrulesep]
+\end{tabularx}
+}
+\\ \parbox{0.79\linewidth}{\tiny Pooled models combine the data from all studies with sufficient data. The dependent variable is whether the farmer followed recommendations for lime or fertilizer. 'Program FE' are fixed effects for each available study; we also include interactions with the control variable. Coefficients are reported as odds ratios. 'AUROC' is the area under the receiver operator curve (higher is better). 'Best Threshold' is the classification threshold that maximizes balanced accuracy. 'Balanced Accuracy' is the average of classification sensitivity and specificity (higher is better).}
+\end{table}
