@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.3)  13 AUG 2025 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.3)  13 AUG 2025 14:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -797,15 +797,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textcite' on input line 75.
+(hyperref)                removing `\textcite' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 75.
+(hyperref)                removing `subscript' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 75.
+(hyperref)                removing `subscript' on input line 77.
 
 
 
@@ -818,142 +818,155 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [10]
 
 [11]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 109.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 111.
  (c:/texlive/2025/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 
 [12]
-<../output/mobile_subscriptions.pdf, id=246, 722.7pt x 433.62pt>
-File: ../output/mobile_subscriptions.pdf Graphic file (type pdf)
-<use ../output/mobile_subscriptions.pdf>
-Package pdftex.def Info: ../output/mobile_subscriptions.pdf  used on input line 139.
-(pdftex.def)             Requested size: 469.75502pt x 281.85628pt.
-
 
 [13]
+<../output/mobile_subscriptions.pdf, id=274, 722.7pt x 433.62pt>
+File: ../output/mobile_subscriptions.pdf Graphic file (type pdf)
+<use ../output/mobile_subscriptions.pdf>
+Package pdftex.def Info: ../output/mobile_subscriptions.pdf  used on input line 143.
+(pdftex.def)             Requested size: 469.75502pt x 281.85628pt.
 
-[14 <../Output/mobile_subscriptions.pdf>]
-<../output/individuals_using_internet.pdf, id=312, 722.7pt x 433.62pt>
+
+[14]
+<../output/individuals_using_internet.pdf, id=287, 722.7pt x 433.62pt>
 File: ../output/individuals_using_internet.pdf Graphic file (type pdf)
 <use ../output/individuals_using_internet.pdf>
-Package pdftex.def Info: ../output/individuals_using_internet.pdf  used on input line 154.
+Package pdftex.def Info: ../output/individuals_using_internet.pdf  used on input line 158.
 (pdftex.def)             Requested size: 469.75502pt x 281.85628pt.
 
 
-[15 <../Output/individuals_using_internet.pdf>]
-<../output/literacy_rate.pdf, id=372, 722.7pt x 433.62pt>
+[15 <../Output/mobile_subscriptions.pdf>]
+<../output/literacy_rate.pdf, id=346, 722.7pt x 433.62pt>
 File: ../output/literacy_rate.pdf Graphic file (type pdf)
 <use ../output/literacy_rate.pdf>
-Package pdftex.def Info: ../output/literacy_rate.pdf  used on input line 167.
+Package pdftex.def Info: ../output/literacy_rate.pdf  used on input line 171.
 (pdftex.def)             Requested size: 469.75502pt x 281.85628pt.
- (../Output/replicated_lime.tex) (../Output/replicated_fert.tex
 
-[16 <../Output/literacy_rate.pdf>])
 
-[17]
+[16 <../Output/individuals_using_internet.pdf>] (../Output/replicated_lime.tex) (../Output/replicated_fert.tex
 
-[18] (../Output/compare_results_lime.tex) (../Output/compare_results_fert.tex)
+[17 <../Output/literacy_rate.pdf>])
 
-[19]
+[18]
+
+[19] (../Output/compare_results_lime.tex) (../Output/compare_results_fert.tex)
 
 [20]
-<../output/shap_forceplot_examples_lime.pdf, id=468, 1084.05pt x 361.35pt>
+
+[21]
+<../output/shap_forceplot_examples_lime.pdf, id=497, 1084.05pt x 361.35pt>
 File: ../output/shap_forceplot_examples_lime.pdf Graphic file (type pdf)
 <use ../output/shap_forceplot_examples_lime.pdf>
-Package pdftex.def Info: ../output/shap_forceplot_examples_lime.pdf  used on input line 204.
+Package pdftex.def Info: ../output/shap_forceplot_examples_lime.pdf  used on input line 208.
 (pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
 
 
-[21]
-<../output/shap_beeswarm_lime.pdf, id=480, 578.16pt x 397.485pt>
+[22]
+<../output/shap_beeswarm_lime.pdf, id=509, 578.16pt x 397.485pt>
 File: ../output/shap_beeswarm_lime.pdf Graphic file (type pdf)
 <use ../output/shap_beeswarm_lime.pdf>
-Package pdftex.def Info: ../output/shap_beeswarm_lime.pdf  used on input line 219.
+Package pdftex.def Info: ../output/shap_beeswarm_lime.pdf  used on input line 223.
 (pdftex.def)             Requested size: 328.82707pt x 226.0654pt.
 
 
-[22 <../Output/shap_forceplot_examples_lime.pdf>]
-<../output/shap_beeswarm_fert.pdf, id=539, 578.16pt x 397.485pt>
+[23 <../Output/shap_forceplot_examples_lime.pdf>]
+<../output/shap_beeswarm_fert.pdf, id=568, 578.16pt x 397.485pt>
 File: ../output/shap_beeswarm_fert.pdf Graphic file (type pdf)
 <use ../output/shap_beeswarm_fert.pdf>
-Package pdftex.def Info: ../output/shap_beeswarm_fert.pdf  used on input line 232.
+Package pdftex.def Info: ../output/shap_beeswarm_fert.pdf  used on input line 236.
 (pdftex.def)             Requested size: 328.82707pt x 226.0654pt.
 
 
-[23 <../Output/shap_beeswarm_lime.pdf>]
+[24 <../Output/shap_beeswarm_lime.pdf>]
 
-[24 <../Output/shap_beeswarm_fert.pdf>]
-
-[25]
-Overfull \hbox (225.54126pt too wide) in paragraph at lines 252--252
-\OT1/cmr/m/n/12 for agri-cul-ture ini-tia-tives''. en. In: \OT1/cmr/m/it/12 Agri-cul-tural Eco-nomics \OT1/cmr/m/n/12 47.S1. []eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/agec.12301,
- []
-
-
+[25 <../Output/shap_beeswarm_fert.pdf>]
 
 [26]
 
 [27]
 
 [28]
-<../output/lightgbm_roc_lime.pdf, id=704, 433.62pt x 433.62pt>
+
+[29]
+Overfull \hbox (225.54126pt too wide) in paragraph at lines 279--279
+\OT1/cmr/m/n/12 for agri-cul-ture ini-tia-tives''. en. In: \OT1/cmr/m/it/12 Agri-cul-tural Eco-nomics \OT1/cmr/m/n/12 47.S1. []eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/agec.12301,
+ []
+
+
+
+[30]
+
+[31]
+Overfull \hbox (14.20694pt too wide) in paragraph at lines 279--279
+[][]\OT1/cmr/m/n/12 Pedregosa, Fabian et al. (June 2018). \OT1/cmr/m/it/12 Scikit-learn: Ma-chine Learn-ing in Python\OT1/cmr/m/n/12 . arXiv:1201.0490
+ []
+
+
+
+[32]
+<../output/lightgbm_roc_lime.pdf, id=765, 433.62pt x 433.62pt>
 File: ../output/lightgbm_roc_lime.pdf Graphic file (type pdf)
 <use ../output/lightgbm_roc_lime.pdf>
-Package pdftex.def Info: ../output/lightgbm_roc_lime.pdf  used on input line 260.
+Package pdftex.def Info: ../output/lightgbm_roc_lime.pdf  used on input line 287.
 (pdftex.def)             Requested size: 234.8775pt x 234.87912pt.
-<../output/lightgbm_roc_fert.pdf, id=706, 433.62pt x 433.62pt>
+<../output/lightgbm_roc_fert.pdf, id=767, 433.62pt x 433.62pt>
 File: ../output/lightgbm_roc_fert.pdf Graphic file (type pdf)
 <use ../output/lightgbm_roc_fert.pdf>
-Package pdftex.def Info: ../output/lightgbm_roc_fert.pdf  used on input line 271.
+Package pdftex.def Info: ../output/lightgbm_roc_fert.pdf  used on input line 298.
 (pdftex.def)             Requested size: 234.8775pt x 234.87912pt.
 
 
-[29 <../Output/lightgbm_roc_lime.pdf>]
-<../output/lightgbm_roc_combined.pdf, id=746, 433.62pt x 433.62pt>
+[33 <../Output/lightgbm_roc_lime.pdf>]
+<../output/lightgbm_roc_combined.pdf, id=807, 433.62pt x 433.62pt>
 File: ../output/lightgbm_roc_combined.pdf Graphic file (type pdf)
 <use ../output/lightgbm_roc_combined.pdf>
-Package pdftex.def Info: ../output/lightgbm_roc_combined.pdf  used on input line 285.
+Package pdftex.def Info: ../output/lightgbm_roc_combined.pdf  used on input line 313.
 (pdftex.def)             Requested size: 234.8775pt x 234.87912pt.
 
 
-[30 <../Output/lightgbm_roc_fert.pdf>]
-<../output/shap_beeswarm_combined.pdf, id=786, 578.16pt x 397.485pt>
+[34 <../Output/lightgbm_roc_fert.pdf>]
+<../output/shap_beeswarm_combined.pdf, id=847, 578.16pt x 397.485pt>
 File: ../output/shap_beeswarm_combined.pdf Graphic file (type pdf)
 <use ../output/shap_beeswarm_combined.pdf>
-Package pdftex.def Info: ../output/shap_beeswarm_combined.pdf  used on input line 296.
+Package pdftex.def Info: ../output/shap_beeswarm_combined.pdf  used on input line 324.
 (pdftex.def)             Requested size: 328.82707pt x 226.0654pt.
 
 
-[31 <../Output/lightgbm_roc_combined.pdf>]
+[35 <../Output/lightgbm_roc_combined.pdf>]
 
-[32 <../Output/shap_beeswarm_combined.pdf>] (./VanOmmeren DevEcon Final Paper.aux)
+[36 <../Output/shap_beeswarm_combined.pdf>] (./VanOmmeren DevEcon Final Paper.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `"VanOmmeren DevEcon Final Paper".out' has not changed.
-(rerunfilecheck)             Checksum: AE14EEFD574780A120BD17BBB9D13237;2175.
+(rerunfilecheck)             Checksum: 95BEB2F52DE983D6D4F5CF192DC04319;2613.
 Package logreq Info: Writing requests to '"VanOmmeren DevEcon Final Paper".run.xml'.
 \openout1 = `"VanOmmeren DevEcon Final Paper.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22264 strings out of 467887
- 384904 string characters out of 5438214
- 1020855 words of memory out of 5000000
- 50398 multiletter control sequences out of 15000+600000
- 645262 words of font info for 111 fonts, out of 8000000 for 9000
+ 22306 strings out of 467887
+ 385700 string characters out of 5438214
+ 1021043 words of memory out of 5000000
+ 50426 multiletter control sequences out of 15000+600000
+ 648038 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,2189b,1474s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,2189b,1483s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
- <c:/Users/Steven/.texlive2025/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "VanOmmeren DevEcon Final Paper.pdf" (32 pages, 565315 bytes).
+ <c:/Users/Steven/.texlive2025/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on "VanOmmeren DevEcon Final Paper.pdf" (36 pages, 605182 bytes).
 PDF statistics:
- 994 PDF objects out of 1000 (max. 8388607)
- 520 compressed objects within 6 object streams
- 105 named destinations out of 1000 (max. 500000)
- 187 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1064 PDF objects out of 1200 (max. 8388607)
+ 582 compressed objects within 6 object streams
+ 118 named destinations out of 1000 (max. 500000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
