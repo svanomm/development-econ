@@ -9,8 +9,9 @@
 \contentsline {section}{\numberline {4}Results and Analysis}{13}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Summary Analysis}{13}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Models}{16}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Model Predictions}{19}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Sentiment Contribution}{19}{subsubsection.4.3.1}%
-\contentsline {section}{\numberline {5}Discussion}{19}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{19}{section.6}%
-\contentsline {section}{\numberline {7}Appendix}{23}{section.7}%
+\contentsline {subsection}{\numberline {4.3}Model Predictions}{21}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discussion}{24}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{25}{section.6}%
+\contentsline {section}{\numberline {7}Appendix}{29}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Receiver Operator Curves}{29}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Combined Model}{30}{subsection.7.2}%

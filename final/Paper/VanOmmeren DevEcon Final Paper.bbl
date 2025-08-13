@@ -639,6 +639,104 @@
     \field{urlyear}{2025}
   \endentry
 
+  \entry{lundberg_unified_2017}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=LS}{%
+         family={Lundberg},
+         familyi={L\bibinitperiod},
+         given={Scott},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LSI}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Su-In},
+         giveni={S\bibinithyphendelim I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Computer Science - Artificial Intelligence, Computer Science - Machine Learning, Statistics - Machine Learning}
+    \strng{namehash}{LSLSI1}
+    \strng{fullhash}{LSLSI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{abstract}{%
+    Understanding why a model makes a certain prediction can be as crucial as the prediction's accuracy in many applications. However, the highest accuracy for large modern datasets is often achieved by complex models that even experts struggle to interpret, such as ensemble or deep learning models, creating a tension between accuracy and interpretability. In response, various methods have recently been proposed to help users interpret the predictions of complex models, but it is often unclear how these methods are related and when one method is preferable over another. To address this problem, we present a unified framework for interpreting predictions, SHAP (SHapley Additive exPlanations). SHAP assigns each feature an importance value for a particular prediction. Its novel components include: (1) the identification of a new class of additive feature importance measures, and (2) theoretical results showing there is a unique solution in this class with a set of desirable properties. The new class unifies six existing methods, notable because several recent methods in the class lack the proposed desirable properties. Based on insights from this unification, we present new methods that show improved computational performance and/or better consistency with human intuition than previous approaches.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.1705.07874
+    \endverb
+    \field{note}{arXiv:1705.07874 [cs]}
+    \field{title}{A {Unified} {Approach} to {Interpreting} {Model} {Predictions}}
+    \verb{url}
+    \verb http://arxiv.org/abs/1705.07874
+    \endverb
+    \verb{file}
+    \verb Preprint PDF:C\:\\Users\\Steven\\Zotero\\storage\\33ZL32ZH\\Lundberg
+    \verb and Lee - 2017 - A Unified Approach to Interpreting Model Predictions
+    \verb .pdf:application/pdf;Snapshot:C\:\\Users\\Steven\\Zotero\\storage\\92
+    \verb IXT22W\\1705.html:text/html
+    \endverb
+    \field{month}{11}
+    \field{year}{2017}
+    \field{urlday}{12}
+    \field{urlmonth}{08}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{mandrekar_receiver_2010}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=MJN}{%
+         family={Mandrekar},
+         familyi={M\bibinitperiod},
+         given={Jayawant\bibnamedelima N.},
+         giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{MJN1}
+    \strng{fullhash}{MJN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    The performance of a diagnostic test in the case of a binary predictor can be evaluated using the measures of sensitivity and speciﬁcity. However, in many instances, we encounter predictors that are measured on a continuous or ordinal scale. In such cases, it is desirable to assess performance of a diagnostic test over the range of possible cutpoints for the predictor variable. This is achieved by a receiver operating characteristic (ROC) curve that includes all the possible decision thresholds from a diagnostic test result. In this brief report, we discuss the salient features of the ROC curve, as well as discuss and interpret the area under the ROC curve, and its utility in comparing two different tests or predictor variables of interest.%
+    }
+    \verb{doi}
+    \verb 10.1097/JTO.0b013e3181ec173d
+    \endverb
+    \field{issn}{15560864}
+    \field{number}{9}
+    \field{pages}{1315\bibrangedash 1316}
+    \field{title}{Receiver {Operating} {Characteristic} {Curve} in {Diagnostic} {Test} {Assessment}}
+    \verb{url}
+    \verb https://linkinghub.elsevier.com/retrieve/pii/S1556086415306043
+    \endverb
+    \field{volume}{5}
+    \verb{file}
+    \verb PDF:C\:\\Users\\Steven\\Zotero\\storage\\5M99E4UL\\Mandrekar - 2010 -
+    \verb  Receiver Operating Characteristic Curve in Diagnostic Test Assessmen
+    \verb t.pdf:application/pdf
+    \endverb
+    \field{journaltitle}{Journal of Thoracic Oncology}
+    \field{month}{09}
+    \field{year}{2010}
+    \field{urlday}{12}
+    \field{urlmonth}{08}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{thaler_nudge_2009}{book}{}{}
     \name{author}{2}{}{%
       {{hash=TRH}{%

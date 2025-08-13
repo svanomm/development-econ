@@ -132,7 +132,7 @@ Below, we plot the national average of Mobile cellular subscriptions per 100 peo
 
 While in 2010, Rwanda had fewer than 40 subscriptions per 100 people (less than half of the United States), it had about 75 subscriptions per 100 people by 2019 (the last year of experiment data in \textcite{fabregas_digital_2025}). Rwanda saw relatively little growth during the 2015 to 2019 period.
 
-Kenya had about 60 subscriptions per 100 people in 2010, nearly twice as many as in Rwanda. By 2015, the country had 80 subscriptions and, unlike Rwanda, saw a striking amount of growth in mobile subscriptions from 2015 to 2019, with the country reportedly surpassing the United States by 2019. As of 2023, the country reportedly had 120 subscriptions per 100 people, compared to about 110 in the United States. Overall, Figure \ref{fig:mobile_subscriptions} shows that mobile phone ownership has considerably increased in the developing countries involved in our studies.\footnote{Note that this chart does not show what percent of the population owns a mobile phone. People can have multiple subscriptions, and this chart does not explain the distribution of phone ownership in the population.}
+Kenya had about 60 subscriptions per 100 people in 2010, nearly twice as many as in Rwanda. By 2015, the country had 80 subscriptions and, unlike Rwanda, saw a striking amount of growth in mobile subscriptions from 2015 to 2019, with the country reportedly surpassing the United States by 2019. As of 2023, the country reportedly had 120 subscriptions per 100 people, compared to about 110 in the United States. Overall, Figure \ref{fig:mobile_subscriptions} shows that mobile phone ownership has considerably increased in the developing countries involved in our studies.\footnote{Note that this chart does not show what percent of the population owns a mobile phone. People can have multiple subscriptions, and this chart does not explain the distribution of phone ownership in the population. Phone ownership is likely unequally distributed, with poor people being less likely to own a phone than rich people within the country.}
 \begin{figure}[H]
     \centering
     \caption{National Average of Mobile Cellular Subscriptions per 100 People}
@@ -159,7 +159,7 @@ Comparing Figure \ref{fig:internet_use} with Figure \ref{fig:mobile_subscription
     \label{fig:internet_use}
 \end{figure}
 
-Finally, we report the national literacy rates for each country. Unfortunately, literacy data was missing for several years in our database for the given countries. Regardless, connecting the available data points shows that literacy rates have slowly increased over time for each country. In 2010, Rwanda had a literacy rate of about 66\%, which increased to 79\% by 2022. Ecuador has the highest literacy rate in this chart, increasing from 92\% to 94\% from 2010 to 2022.\footnote{United States literacy rate was not available in this data. Using a comparable definition of basic literacy (as opposed to more advanced reading/writing ability), the U.S. would likely have a literacy rate of approximately 100\%. \url{https://worldpopulationreview.com/country-rankings/literacy-rate-by-country}.}
+Finally, we report the national literacy rates for each country. Unfortunately, literacy data was missing for several years in our database for the given countries. Regardless, connecting the available data points shows that literacy rates have slowly increased over time for each country. In 2010, Rwanda had a literacy rate of about 66\%, which increased to 79\% by 2022. Ecuador has the highest literacy rate in this chart, increasing from 92\% to 94\% from 2010 to 2022.\footnote{United States literacy rate was not available in this data. Using a comparable definition of basic literacy (as opposed to more advanced reading/writing ability), the U.S. would likely have a literacy rate of approximately 100\%. \url{https://worldpopulationreview.com/country-rankings/literacy-rate-by-country}.} This chart shows that literacy rate is likely the bottleneck in introducing text message interventions in developing countries, with literacy being lower than phone ownership in Kenya and Rwanda.\footnote{Note that text message interventions need not necessarily require literacy. A carefully crafted series of emojis, pictures, and videos could convey helpful information without requiring text comprehension.}
 
 \begin{figure}[H]
     \centering
@@ -178,17 +178,71 @@ Below, we report our replication of the heterogeneity regressions from \textcite
 \input{../output/replicated_lime.tex}
 \input{../output/replicated_fert.tex}
 
-Viewing the replicated results from \textcite{fabregas_digital_2025}, we find that the AUROC, best threshold, and balanced accuracy vary substantially between models. For predicting lime, the model that includes all observations (Large Farm) has an AUROC of 0.79 and balanced accuracy of 0.76.\footnote{This model fit is due almost entirely to the program fixed effects. Removing the treatment variable, control, and interaction terms yields an AUROC of 0.78, which is only slightly worse.} The other controls are missing for some observations, and for the lime prediction this results in worse AUROC. But this does not hold for fertilizer, where the model with the most number of observations (Large Farm and Used Input) have AUROCs that are worse than a model with less than a quarter of the observations (Primary).
+Viewing the replicated results from \textcite{fabregas_digital_2025}, we find that the AUROC, best threshold, and balanced accuracy vary substantially between models. For predicting lime, the model that includes all observations (Large Farm) has an AUROC of 0.79 and balanced accuracy of 0.76.\footnote{This model fit is due almost entirely to the program fixed effects. Removing the treatment variable, control, and interaction terms yields an AUROC of 0.78, which is only slightly worse.} The other controls are missing for many observations, and for the lime prediction this results in worse AUROC. But this does not hold for fertilizer, where the models with the most number of observations (Large Farm and Used Input) have AUROCs that are worse than a model with less than a quarter of the observations (Primary).
 
-One takeaway from the replicated results is that model performance seems to be incomparable when the observation count is different. The value of Mean Control (i.e. adoption rates for the control group) is so different across models that it complicates direct comparisons.
+One takeaway from the replicated results is that model performance seems to be incomparable when the observation count is different. The value of Mean Control (i.e. adoption rates for the control group) is so different across models that it complicates direct comparisons. With the fertilizer models, we cannot say from this table whether the Primary model has a higher AUROC because it is a better predictor, or because it is only avaible on a small subset of the data.
+
+While it would have been helpful to include all the controls mentioned in the tables above in a single logit model to assess overall heterogeneity, this is unfortunately not possible. There are no records that have non-missing values for all of the controls, so a standard logit model will not run on the data.\footnote{We did not experiment with data imputation techniques, which could have helped alleviate this issue. However, we do not believe that data imputation would solve all issues. For example, the 'heard input' variable is only available for 773 observations. It would be almost completely uninformative to impute this on the remaining 40,000 observations in the data.} Thus, to compare against the LightGBM models, we use the best-performing model that includes all observations from the tables above, i.e. the 'Large Farm' lime model and 'Used Input' fertilizer models.
+
+We now report the best logit models from \textcite{fabregas_digital_2025} against two LightGBM specifications: a basic model which includes all control variables from the tables above, and a larger model which includes additional variables and interaction terms not used by the authors. Recall that because LightGBM models natively support missing values, they can include all observations in the data while still using all the control variables.
+
+\input{../output/compare_results_lime.tex}
+\input{../output/compare_results_fert.tex}
+
+Viewing the results in the tables above, we see that the large LightGBM model outperforms the logit and basic LightGBM model for both lime and fertilizer predictions. For predicting lime, LightGBM models provide a relatively marginal improvement in AUROC and balanced accuracy: the large model has an AUROC of 0.84 vs the logit model's 0.79, and a balanced accuracy of 0.78 vs 0.76. There are larger improvements when predicting fertilizer, with the large model yielding an AUROC of 0.86 vs the logit's 0.76, and a balanced accuracy of 0.78 vs 0.72. While the basic LightGBM model slightly outperforms the logit in predicting lime, it is noticeably worse than the logit in predicting fertilizer usage.
+
+Finally, we tested a LightGBM model which combines lime and fertilizer to see how well a model could predict the overall decision to adopt the suggested agricultural inputs. The basic model has an AUROC of 0.75 and balanced accuracy of 0.71, while the large model has an AUROC of 0.82 and balanced accuracy of 0.76. This suggests that there are likely some common factors governing the choice to adopt agricultural inputs, and that they can be predicted fairly accurately. See the Appendix, Figure  for more information about this model.
 
 \subsection{Model Predictions}
-All results in this section use the LightGBM model with the highest $R^2$ from the table above, unless otherwise specified.
+Machine learning models like LightGBM are often considered ``black boxes'' because they do not provide an interpretable set of coefficients for the control variables. Whereas in the logit model, we can report the odds ratios estimated by the model, we need to be more creative in interpreting the LightGBM models. We assess how important our controls are to the models' performance through the use of Shapley values.\footnote{We calculate Shapley values using a method developed by \textcite{lundberg_unified_2017}, as incorporated in the Python package \textsf{shap}.} Shapley values attribute the importance of each feature for a given model through the mechanics of cooperative game theory. Shapley values tell you by how much the given feature contributes to the model's final prediction. For example, if a feature has a Shapley value of 100, then the model's prediction is 100 higher than it would be without that feature. A higher Shapley value (in absolute value) means that the feature contributes more to the model's predictions, meaning it is more important.
 
+In Figure \ref{fig:shap_force}, we report two examples of how Shapley values can be used to understand the LightGBM large model, predicting lime usage. We sampled 1000 farmers from the data and identified the farmer with the lowest estimated probability of adoption (in orange) and the highest probaility (in blue). The charts are read from top to bottom: both farmers start out with a baseline probability of 40.4\%. We then incorporate the Shapley values for each control variable to see how it changes the predicted probability of using lime, with the bottom bars representing the model's final prediction.\footnote{For the sake of clarity, we have omitted controls with near-zero Shapley values.} For example, the orange farmer's predicted probability increases from a baseline of 40.4\% to 41.3\% when we incorporate the indicator for whether he/she has used lime before (which is missing in this case). 
 
-\subsubsection{Sentiment Contribution}
+\begin{figure}[H]
+    \centering
+    \caption{Shapley Waterfall Plot Examples, Large Model: Lime}
+    \includegraphics[width=\textwidth]{../output/shap_forceplot_examples_lime.pdf}
+    \begin{minipage}{0.8\textwidth}
+    \tiny
+    Shapley values estimate how much each feature value contributes to the model's estimated probability of following recommendations for lime. We sampled 1000 farmers and selected the smallest and largest estimated probability. The charts show how the model goes from a baseline probability value (at the top) to the final prediction (the bottom) as we incorporate the control variables, step by step. Each bar is a separate control variable, and the values in parentheses are the observed value for the given farmer. Shapley values here are given by the difference between each bar.
+    \end{minipage}
+    \label{fig:shap_force}
+\end{figure}
+
+Comparing the two farmers, one difference that stands out is that the blue farmer is identified as female, while the orange farmer's female status is unknown. The model attributes an increased probability of using lime for the orange farmer because of her female status: +1.3\% because of the interaction of soil acidity and female, +1.5\% because of the interaction between age and female, and +4.8\% from the female indicator alone. The largest positive effect on the predicted probability comes from the variable `Age (Decades) x Treated', which indicates that the model thinks this 58-year-old farmer who received the text campaign is highly receptive to adopting lime. Conversely, the orange farmer has an unknown age, which decreases the model's predicted probability.
+
+Shapley values are neither linear nor homogenous across observations, and so we cannot expect that all 58-year-old farmers who received the text campaign should have an increased probability of adopting lime or fertilizer. Figure \ref{fig:shap_lime} and Figure \ref{fig:shap_fert} show the distribution of Shapley values from the lime/fertilizer models for a sample of 1000 farmers. Each row in the charts reports the distribution for a given feature, where the $x$-axis is the Shapley value (increased/decreased predicted probability of adoption), the colors indicate whether the feature's observed value is low (blue), high (red), or missing (gray) for each farmer, and the height represents the frequency distribution of values.
+
+\begin{figure}[H]
+    \centering
+    \caption{Top Shapley Value Distributions, Large Model: Lime}
+    \includegraphics[width=0.7\textwidth]{../output/shap_beeswarm_lime.pdf}
+    \begin{minipage}{0.7\textwidth}
+    \tiny
+    Shapley values estimate how much each feature value contributes to the model's estimated probability of following recommendations for lime/fertilizer. A higher SHAP value (the x-axis) means that the model predicts a higher probability than it would without that feature. Shown here are the top 10 features by average absolute SHAP value. Dots in this graph are blue when the respective feature is a lower value, and red when the respective feature is a higher value. Gray dots indicate missing values for the respective feature.
+    \end{minipage}
+    \label{fig:shap_lime}
+\end{figure}
+
+The distributions of values in Figure \ref{fig:shap_lime} for predicting lime adoption show that missing values clearly affect the predicted probabilities. The first row (a variable for age interacted with treatment status) has negative Shapley values when missing, and positive values for both low or high non-missing values. The second row shows that when the farmer has never used lime before, the model expects the farmer to have a lower adoption rate, while it predicts a higher value for those who have used lime before and a smaller positive effect for missing values.
+
+\begin{figure}[H]
+    \centering
+    \caption{Top Shapley Value Distributions, Large Model: Fertilizer}
+    \includegraphics[width=0.7\textwidth]{../output/shap_beeswarm_fert.pdf}
+    \begin{minipage}{0.7\textwidth}
+    \tiny
+    Shapley values estimate how much each feature value contributes to the model's estimated probability of following recommendations for lime/fertilizer. A higher SHAP value (the x-axis) means that the model predicts a higher probability than it would without that feature. Shown here are the top 10 features by average absolute SHAP value. Dots in this graph are blue when the respective feature is a lower value, and red when the respective feature is a higher value. Gray dots indicate missing values for the respective feature.
+    \end{minipage}
+    \label{fig:shap_fert}
+\end{figure}
+
+The distributions of values in Figure \ref{fig:shap_fert} for predicting fertilizer adoption show clear signs of differences between the experiments: 3 of the top 10 variables by average absolute Shapley value are indicators for being in different experiments. Moreover, the chart shows that there are homogenous predicted effects: being in program 3 or program 2 results in a lower predicted adoption rate, while being in program 0 results in a higher predicted adoption rate.
+
 \section{Discussion}
 \label{section:discussion}
+
+The fact that AUROC and balanced accuracy both improve when we incorporate additional controls suggests that there is heterogeneity in responsiveness to the text message campaign. Further, with AUROC values of 0.84 and 0.86 for lime and fertilizer, respectively, the models are able to predict the adoption of recommended products significantly better than random guessing.\footnote{According to \textcite{mandrekar_receiver_2010}, an AUROC between 0.8 and 0.9 is considered to be excellent at discriminating classes.}
 
 \section{Conclusion}
 \label{section:conclusion}
@@ -198,5 +252,53 @@ All results in this section use the LightGBM model with the highest $R^2$ from t
 \newpage
 
 \section{Appendix}
+
+\subsection{Receiver Operator Curves}
+\begin{figure}[H]
+    \centering
+    \caption{Receiver Operator Curve, Large Model: Lime}
+    \includegraphics[width=0.5\textwidth]{../output/lightgbm_roc_lime.pdf}
+    \begin{minipage}{0.6\textwidth}
+    \tiny
+    The receiver operater characteristic (ROC) curve depicts the performance of a binary classification model across varying decision thresholds. The curve illustrates the trade-off between true positive rate and false positive rate, and the area under the ROC curve (AUROC) quantifies the model's overall ability to discriminate between the two outcome classes. According to \textcite{mandrekar_receiver_2010}, an AUROC between 0.8 and 0.9 is considered to be excellent at discriminating classes.
+    \end{minipage}
+    \label{fig:roc_lime}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Receiver Operator Curve, Large Model: Fertilizer}
+    \includegraphics[width=0.5\textwidth]{../output/lightgbm_roc_fert.pdf}
+    \begin{minipage}{0.6\textwidth}
+    \tiny
+    The receiver operater characteristic (ROC) curve depicts the performance of a binary classification model across varying decision thresholds. The curve illustrates the trade-off between true positive rate and false positive rate, and the area under the ROC curve (AUROC) quantifies the model's overall ability to discriminate between the two outcome classes. According to \textcite{mandrekar_receiver_2010}, an AUROC between 0.8 and 0.9 is considered to be excellent at discriminating classes.
+    \end{minipage}
+    \label{fig:roc_fert}
+\end{figure}
+
+\subsection{Combined Model}
+The combined model was created by stacking the datasets for lime and fertilizer adoption. Note that creating the dataset this way duplicates records for some farmers who were asked to consider buying both lime and fertilizer. The combined dataset has 170,021 observations.
+
+\begin{figure}[H]
+    \centering
+    \caption{Receiver Operator Curve, Large Model: Lime/Fertilizer}
+    \includegraphics[width=0.5\textwidth]{../output/lightgbm_roc_combined.pdf}
+    \begin{minipage}{0.6\textwidth}
+    \tiny
+    The receiver operater characteristic (ROC) curve depicts the performance of a binary classification model across varying decision thresholds. The curve illustrates the trade-off between true positive rate and false positive rate, and the area under the ROC curve (AUROC) quantifies the model's overall ability to discriminate between the two outcome classes. According to \textcite{mandrekar_receiver_2010}, an AUROC between 0.8 and 0.9 is considered to be excellent at discriminating classes.
+    \end{minipage}
+    \label{fig:roc_combined}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Top Shapley Value Distributions, Large Model: Lime/Fertilizer}
+    \includegraphics[width=0.7\textwidth]{../output/shap_beeswarm_combined.pdf}
+    \begin{minipage}{0.7\textwidth}
+    \tiny
+    Shapley values estimate how much each feature value contributes to the model's estimated probability of following recommendations for lime/fertilizer. A higher SHAP value (the x-axis) means that the model predicts a higher probability than it would without that feature. Shown here are the top 10 features by average absolute SHAP value. Dots in this graph are blue when the respective feature is a lower value, and red when the respective feature is a higher value. Gray dots indicate missing values for the respective feature.
+    \end{minipage}
+    \label{fig:shap_combined}
+\end{figure}
 
 \end{document}
