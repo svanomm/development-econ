@@ -41,7 +41,6 @@
     \list{language}{1}{%
       {en}%
     }
-    \keyw{agriculture, D1, I2, impact evaluation, Information technology, O1, O3}
     \strng{namehash}{AJC+1}
     \strng{fullhash}{AJCGIBJ1}
     \field{labelnamesource}{author}
@@ -57,7 +56,6 @@
     \verb 10.1111/agec.12301
     \endverb
     \field{issn}{1574-0862}
-    \field{note}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/agec.12301}
     \field{number}{S1}
     \field{pages}{35\bibrangedash 48}
     \field{title}{The promise (and pitfalls) of {ICT} for agriculture initiatives}
@@ -65,12 +63,6 @@
     \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/agec.12301
     \endverb
     \field{volume}{47}
-    \verb{file}
-    \verb Full Text PDF:C\:\\Users\\Steven\\Zotero\\storage\\Y5L6SB6H\\Aker et
-    \verb al. - 2016 - The promise (and pitfalls) of ICT for agriculture initia
-    \verb tives.pdf:application/pdf;Snapshot:C\:\\Users\\Steven\\Zotero\\storag
-    \verb e\\DXJ6TF3C\\agec.html:text/html
-    \endverb
     \field{journaltitle}{Agricultural Economics}
     \field{year}{2016}
     \field{urlday}{07}
@@ -116,10 +108,6 @@
     \list{location}{1}{%
       {Oxford ; New York}%
     }
-    \verb{file}
-    \verb PDF:C\:\\Users\\Steven\\Zotero\\storage\\IXBAFFCZ\\Banerjee et al. -
-    \verb 2006 - Understanding poverty.pdf:application/pdf
-    \endverb
     \field{year}{2006}
   \endentry
 
@@ -249,11 +237,6 @@
     \verb ype/journal_article
     \endverb
     \field{volume}{52}
-    \verb{file}
-    \verb PDF:C\:\\Users\\Steven\\Zotero\\storage\\32DDSU28\\Carrión-Yaguana e
-    \verb t al. - 2020 - Promoting Behavioral Change Using Text Messages A Case
-    \verb  Study of Blackberry Farmers in Ecuador.pdf:application/pdf
-    \endverb
     \field{journaltitle}{Journal of Agricultural and Applied Economics}
     \field{month}{08}
     \field{year}{2020}
@@ -292,10 +275,6 @@
     \verb e.pdf
     \endverb
     \field{volume}{904}
-    \verb{file}
-    \verb PDF:C\:\\Users\\Steven\\Zotero\\storage\\SB8KIIFM\\Research_note_-_Ma
-    \verb nagement_Information_Systems_and_Firm_Performance.pdf:application/pdf
-    \endverb
     \field{journaltitle}{PEDL Research Note}
     \field{year}{2016}
     \field{urlday}{07}
@@ -343,10 +322,6 @@
     \verb https://arefiles.ucdavis.edu/uploads/filer_public/2014/03/27/casaburi
     \verb _et_al_ict_agriculture_20140306.pdf
     \endverb
-    \verb{file}
-    \verb PDF:C\:\\Users\\Steven\\Zotero\\storage\\4ATI5EL9\\casaburi_et_al_ict
-    \verb _agriculture_20140306.pdf:application/pdf
-    \endverb
     \field{month}{09}
     \field{year}{2019}
     \field{urlday}{07}
@@ -381,11 +356,6 @@
     \verb{url}
     \verb http://faculty.las.illinois.edu/akresh/GBL298/Duflo-Kremer_Randomizat
     \verb ion.pdf
-    \endverb
-    \verb{file}
-    \verb PDF:C\:\\Users\\Steven\\Zotero\\storage\\X42RTV79\\Duflo and Kremer (
-    \verb 2003) - Use of Randomization in the Evaluation of Development Effecti
-    \verb veness.pdf:application/pdf
     \endverb
     \field{year}{2003}
   \endentry
@@ -925,7 +895,6 @@
     Now available: Nudge: The Final EditionThe original edition of the multimillion-copy New York Times bestseller by the winner of the Nobel Prize in Economics, Richard H. Thaler, and Cass R. Sunstein: a revelatory look at how we make decisions—for fans of Malcolm Gladwell’s Blink, Charles Duhigg’s The Power of Habit, James Clear’s Atomic Habits, and Daniel Kahneman’s Thinking, Fast and SlowNamed a Best Book of the Year by The Economist and the Financial TimesEvery day we make choices—about what to buy or eat, about financial investments or our children’s health and education, even about the causes we champion or the planet itself. Unfortunately, we often choose poorly. Nudge is about how we make these choices and how we can make better ones. Using dozens of eye-opening examples and drawing on decades of behavioral science research, Nobel Prize winner Richard H. Thaler and Harvard Law School professor Cass R. Sunstein show that no choice is ever presented to us in a neutral way, and that we are all susceptible to biases that can lead us to make bad decisions. But by knowing how people think, we can use sensible “choice architecture” to nudge people toward the best decisions for ourselves, our families, and our society, without restricting our freedom of choice.%
     }
     \field{isbn}{978-0-14-311526-7}
-    \field{note}{Google-Books-ID: NGA9DwAAQBAJ}
     \field{shorttitle}{Nudge}
     \field{title}{Nudge: {Improving} {Decisions} {About} {Health}, {Wealth}, and {Happiness}}
     \field{month}{02}
